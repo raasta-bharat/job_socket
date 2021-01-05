@@ -18,7 +18,10 @@ def connect():
             response = requests.get('https://server.nikhilvj.co.in/delhirt/VehiclePositions.pb')
             content = response.content
             for id in socket_ids:
-                emit('transit_data', content, user=id)
+                try:
+                    emit('transit_data', content, user=id)
+                except:
+                    pass
     
     socket_ids.append(request.sid)
     if len(socket_ids) == 1:
