@@ -6,7 +6,6 @@ import requests
 from flask import copy_current_request_context
 
 from flask_socketio import join_room, leave_room
-from app.datajob.delhi_realtime_data import add_id
 
 socket_ids = []
 
