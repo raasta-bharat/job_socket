@@ -2,7 +2,11 @@ import socketio
 
 host = 'raasta.herokuapp.com'
 port = 80
-sio_client = socketio.Client()
+
+# host = '0.0.0.0'
+# port = 5000
+
+sio_client = socketio.Client(reconnection=True)
 
 sio_client.connect("http://" + str(host) + ":" + str(port), namespaces = ['/'])
 
